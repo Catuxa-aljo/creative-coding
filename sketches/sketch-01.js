@@ -4,11 +4,15 @@ const settings = {
   dimensions: [ 1080, 1080 ]
 };
 
+
+
+
 const sketch = () => {
   return ({ context, width, height }) => {
-    context.fillStyle = 'blue';
+    context.fillStyle = 'black';
     context.fillRect(0, 0, width, height);
     context.lineWidth = width * 0.01
+    context.strokeStyle = 'white'
 
     //big square
     const w = width * 0.10;
@@ -16,6 +20,7 @@ const sketch = () => {
     const gap = width * 0.03;
     const ix = width * 0.17;
     const iy = height * 0.17;
+    
 
     //small square
     const off  = width * 0.02
@@ -30,11 +35,14 @@ const sketch = () => {
           context.beginPath();
           context.rect(x, y, w, h);
           context.stroke();
+          context.strokeStyle = 'aquamarine'
+
   
           if ( Math.random() > 0.5) {
               context.beginPath();
               context.rect(x + off / 2, y + off /2 , w - off, h - off);
               context.stroke()
+              context.strokeStyle = 'white'
           }
       }
     }
